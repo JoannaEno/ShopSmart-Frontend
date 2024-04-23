@@ -5,7 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 export type ButtonProps = {
   label: string;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
-  onClick?: () => React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: () => React.MouseEventHandler<HTMLButtonElement> | any;
   className?: string;
   href?: string;
   icon?: boolean;

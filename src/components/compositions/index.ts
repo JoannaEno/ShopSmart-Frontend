@@ -7,3 +7,4 @@ export * from "./Search";
 export * from "./MenuTrailingItem";
 export * from "./Hero";
 export * from "./Footer";
+export * from "./Dropdown";

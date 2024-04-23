@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import { ReactComponent as HeroText } from "@/assets/HeroText.svg";
 import { Text, Button, StackedImage } from "@/components/elements"
@@ -5,9 +7,12 @@ import Image1 from "../../../assets/image-1.png"
 import Image2 from "../../../assets/image-2.png"
 import Image3 from "../../../assets/image-3.png"
 import Image4 from "../../../assets/image-4.png"
+import { useRouter } from 'next/navigation';
 
 
 export const Hero = () => {
+    const router = useRouter()
+
     return (
         <div className='bg-gradient-to-r from-black_00 via-black_04 via-10% to-black w-full rounded-lg'>
             <div className="bg-[url('../assets/hero-img.png')] overflow-x-auto overflow-y-hidden bg-no-repeat rounded-tl-lg rounded-bl-lg">
@@ -25,7 +30,7 @@ export const Hero = () => {
                         </div>
                         {/* <HeroText className='p-0 m-0' /> */}
                         <Text level="h1" className='text-5xl py-8 text-end'>Up to <strong>80% off</strong> on<br />all items till<br /><strong className='flex justify-end'>FEBRUARY 1<span className='text-3xl'>st</span></strong></Text>
-                        <Button icon label="Shop Now" className="bg-blue text-white p-4 rounded-md text-lg font-medium" />
+                        <Button onClick={() => router.push('/product/listing')} icon label="Shop Now" className="bg-blue text-white p-4 rounded-md text-lg font-medium" />
                     </div>
 
                 </div>

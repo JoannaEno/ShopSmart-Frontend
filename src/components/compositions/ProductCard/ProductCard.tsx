@@ -3,6 +3,8 @@ import * as React from "react";
 import { Text } from "@/components/elements/Text";
 import Rating from "../Rating/Rating";
 import { CartButton } from "@/components/elements";
+import Link from "next/link";
+import { Url } from "next/dist/shared/lib/router/router";
 // import Headphone from "@/assets/cart.svg";
 
 export type ProductCardProps = {
@@ -10,12 +12,15 @@ export type ProductCardProps = {
   children?: React.ReactNode;
   img?: string;
   imgAlt?: string
+  link: Url
 };
 
-export const ProductCard: React.FC<ProductCardProps> = ({ className, children, img, imgAlt }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({ className, children, img, imgAlt, link }) => {
   return (
     <div className={`rounded-t-lg ${className} w-fit my-4`}>
-      {img ? <img src={img} alt={imgAlt} className="w-64 h-64" /> : children}
+      <Link href={link}>
+        {img ? <img src={img} alt={imgAlt} className="w-64 h-64" /> : children}
+      </Link>
 
 
       <div className="mt-6 font-Inter">

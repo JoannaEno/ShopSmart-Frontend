@@ -92,7 +92,7 @@ export const NavBar = () => {
 
                 </div>
                 <div className='flex items-center'>
-                    <Search />
+                    <Search className='bg-white_05' />
                     <MenuTrailingItem icon={faUser} label='Profile' />
                     <MenuTrailingItem icon={faHeart} label='All Categories' />
                     <MenuTrailingItem label='Cart' ><CheckOut className="" /></MenuTrailingItem>

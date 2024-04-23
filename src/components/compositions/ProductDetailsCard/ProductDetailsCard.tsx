@@ -31,7 +31,7 @@ export const ProductDetailsCard: React.FC<ShopNowCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-[#DEF2FF] text-gray-500 max-w-[70%] md:flex  ${className}`}
+      className={` text-gray-500 max-w-[95%] md:flex p-4 lg:p-8  ${className}`}
     >
       <div className="space-y-4">
         <Rectangle className="" />
@@ -44,12 +44,12 @@ export const ProductDetailsCard: React.FC<ShopNowCardProps> = ({
       </div>
       <div className="pl-8 font-Inter">
         <Text
-          level="h3"
-          className="text-[#101928] justify-between text-lg font-medium leading-5 mb-3"
+          level="h2"
+          className="text-[#101928] justify-between text-2xl font-medium leading-5 mb-3"
         >
-          {}
+          {"Apple Laptop"}
         </Text>
-        <Text className="mt-3 font-normal font-Inter text-xs leading-tight">
+        <Text className="mt-3 font-normal font-Inter leading-tight">
           Lorem ipsum dolor sit amet consectetur. Sed cras commodo ante nunc
           proin mi in lacus adipiscing. Ullamcorper pretium in dui vitae
           adipiscing hendrerit a facilisis.
