@@ -14,7 +14,7 @@ export const Hero = () => {
     const router = useRouter()
 
     return (
-        <div className='bg-gradient-to-r from-black_00 via-black_04 via-10% to-black w-full rounded-lg'>
+        <div className='bg-gradient-to-r from-black_00 via-black_04 via-10% to-black w-full rounded-lg text-white'>
             <div className="bg-[url('../assets/hero-img.png')] overflow-x-auto overflow-y-hidden bg-no-repeat rounded-tl-lg rounded-bl-lg">
                 <div className="flex w-full lg:px-16 px-8 lg:pt-32">
                     <div className="flex flex-col pt-16">

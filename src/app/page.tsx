@@ -12,9 +12,30 @@ import { listItems } from "@/utils";
 import Image from "next/image";
 import headphonePromo from '../assets/headphonePromo.png'
 import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   const router = useRouter()
+
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch('http://localhost:8000/apis/products');
+            const jsonData = await response.json();
+            setData(jsonData.product);
+            setLoading(false);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+            setLoading(false);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between space-y-24 ">
       <div className="flex px-4 w-full lg:px-8">
@@ -55,7 +76,8 @@ export default function Home() {
         <div className="pb-4 lg:pb-8"><Text level="h2" className="text-black font-medium text-3xl">Popular</Text></div>
 
         <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 min-w-full justify-items-center">
-          {listItems(8).map((_, index) => (<ProductCard link={`/product/${index + 1}`} key={index} className="text-[#101928] ">
+
+          {data && data?.map((item: any , index) => (<ProductCard link={`/product/${index + 1}`} key={index} className="text-[#101928]" name={item.name} price={item.price} description={item.description}>
             {/* change the product images to normal images so they can accept url */}
             <HeadPhone className="" />
           </ProductCard>))}
